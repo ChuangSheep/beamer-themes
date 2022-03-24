@@ -1,0 +1,22 @@
+\mode<presentation>
+
+
+\usefonttheme{professionalfonts} 
+\usefonttheme{serif} 
+
+\newfontfamily\mulish[Path=fonts/Mulish/,
+                      Extension=.ttf,
+                      BoldFont=Mulish-ExtraBold,
+                      ItalicFont=Mulish-Italic
+                      ]
+                      {Mulish-Regular}
+
+\IfFontExistsTF{Tw Cen MT}{\newfontfamily\ctfamily{Tw Cen MT}}{\newcommand{\ctfamily}{\mulish}}
+
+\setbeamerfont{title}{family=\ctfamily,series=\bfseries,size=\fontsize{32}{36}}
+\setbeamerfont{subtitle}{family=\ctfamily,series=\bfseries,size=\fontsize{18}{22}}
+\setbeamerfont{author}{family=\fontspec{Tw Cen MT},size=\fontsize{12}{14}}
+
+
+
+\mode<all>

@@ -1,0 +1,40 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \setlength{\unitlength}{1mm}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fill[color=blue-light1] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+  
+    \ifnum\thepage>1\relax
+      \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{simple}[1][]
+{ 
+    \vskip2.5cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3.6cm,sep=4pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[wd=12cm,leftskip=3.6cm,sep=4pt,#1]{title page subheader}
+      \usebeamerfont{subtitle}\insertsubtitle\par
+    \end{beamercolorbox}
+
+    \vskip0.75cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+
+    \vskip0.2cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+      \usebeamerfont{author}\insertdate
+    \end{beamercolorbox}
+    \vfill
+}
+
+\mode<all>
