@@ -4,18 +4,25 @@
 \usefonttheme{professionalfonts} 
 \usefonttheme{serif} 
 
-\newfontfamily\mulish[Path=fonts/Mulish/,
-                      Extension=.ttf,
-                      BoldFont=Mulish-ExtraBold,
-                      ItalicFont=Mulish-Italic
-                      ]
-                      {Mulish-Regular}
+\newcommand{\mulishoptions}{
+  Path=fonts/Mulish/,
+  Extension=.ttf,
+  BoldFont=Mulish-ExtraBold,
+  ItalicFont=Mulish-Italic
+}
+
+\newfontfamily\mulish[\mulishoptions]{Mulish-Regular}
 
 \IfFontExistsTF{Tw Cen MT}{\newfontfamily\ctfamily{Tw Cen MT}}{\newcommand{\ctfamily}{\mulish}}
+% \IfFontExistsTF{Tw Cen MT}{\setmainfont{Tw Cen MT}}{\setmainfont[\mulishoptions]{Mulish-Regular}}
+\setmainfont[\mulishoptions]{Mulish-Regular}
 
-\setbeamerfont{title}{family=\ctfamily,series=\bfseries,size=\fontsize{32}{36}}
-\setbeamerfont{subtitle}{family=\ctfamily,series=\bfseries,size=\fontsize{18}{22}}
-\setbeamerfont{author}{family=\fontspec{Tw Cen MT},size=\fontsize{12}{14}}
+
+
+\setbeamerfont{title}{family=\ctfamily,series=\bfseries,size=\fontsize{30}{32}}
+\setbeamerfont{subtitle}{family=\ctfamily,series=\bfseries,size=\fontsize{18}{20}}
+\setbeamerfont{author}{family=\ctfamily,size=\fontsize{8}{9}}
+\setbeamerfont{frametitle}{family=\ctfamily,series=\bfseries,size=\fontsize{24}{26}}
 
 
 

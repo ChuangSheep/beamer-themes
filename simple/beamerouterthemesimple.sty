@@ -1,0 +1,45 @@
+\mode<presentation>
+
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \setlength{\unitlength}{1mm}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fill[color=blue-light1] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \draw[draw=black, line width=3mm, color=white] (2,2) rectangle (7,7);
+
+    \fill[color=blue-light1] (6,3.5) rectangle (8,5.5);
+    
+    \ifnum\thepage>1\relax
+      \fill[blue-light1,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{simple}[1][]
+{ 
+    \vskip2.45cm
+    \begin{beamercolorbox}[wd=12cm,leftskip=4cm,sep=4pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par
+    \end{beamercolorbox}
+
+    \begin{beamercolorbox}[wd=12cm,leftskip=4cm,sep=2pt,#1]{title page subheader}
+      \usebeamerfont{subtitle}\insertsubtitle\par
+    \end{beamercolorbox}
+
+    \vfill
+
+
+    \tikz[overlay, remember picture,
+          shift=(current page.south west),
+          x=(current page.south east), y=(current page.north west),]
+    {
+      \node[above right]at (0,-0.01) {\usebeamercolor{date}\usebeamerfont{author}\insertauthor}; 
+      \node[above left]at (1,-0.01) {\usebeamercolor{author}\usebeamerfont{author}\insertdate}; 
+    }
+}
+
+
+\mode<all>
