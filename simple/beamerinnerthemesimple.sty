@@ -6,8 +6,31 @@
     shift=(current page.south west),
     x=(current page.south east), y=(current page.north west),]
     {
-      \node[anchor=south,below right]at (0.0509,0.95) {\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle}; 
+      \usebeamercolor{secondary}
+      % Very hacky but it works
+      % for the little rectangle slider under the frame title
+      \node[rectangle,yshift=-0.6cm,yscale=0.22,xshift=0.25cm,xscale=0.95,fill=fg,below right] at (0.0509,0.95) {\usebeamercolor[fg]{secondary}\usebeamerfont{frametitle}\insertframetitle}; 
+
+      \node[anchor=south,below right] at (0.0509,0.95) {\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle}; 
     }
+}
+
+% Env Aliasing: iframe --- indentframe
+% FIX: HOW TF TO PASS PARAMETER?
+\newcommand{\indentframecontent}[1]{
+  \begin{frame}{{#1}}
+    \usebeamerfont{normal text}
+    \hfill
+    \begin{minipage}[c][\the\paperheight - 6cm][t]{\textwidth-0.5cm}
+      \BODY
+    \end{minipage}
+  \end{frame}
+}
+\NewEnviron{indentedframe}[1][]{
+  \indentframecontent{{#1}}
+}
+\NewEnviron{iframe}[1][]{
+  \indentframecontent{{#1}}
 }
 
 \mode<all>

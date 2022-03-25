@@ -1,18 +1,20 @@
 \mode<presentation>
 
-
 \setbeamertemplate{background}{
   \begin{tikzpicture}
     \setlength{\unitlength}{1mm}
     \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-    \fill[color=blue-light1] (0,0) rectangle (\the\paperwidth,\the\paperheight);
 
-    \draw[draw=black, line width=3mm, color=white] (2,2) rectangle (7,7);
+    \usebeamercolor{primary}
 
-    \fill[color=blue-light1] (6,3.5) rectangle (8,5.5);
+    \fill[color=bg] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \draw[draw=white, line width=4mm] (2,2) rectangle (7,7);
+
+    \fill[color=bg] (6,3.5) rectangle (8,5.5);
     
     \ifnum\thepage>1\relax
-      \fill[blue-light1,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[bg,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
     \fi
   \end{tikzpicture}
 }
@@ -36,8 +38,8 @@
           shift=(current page.south west),
           x=(current page.south east), y=(current page.north west),]
     {
-      \node[above right]at (0,-0.01) {\usebeamercolor{date}\usebeamerfont{author}\insertauthor}; 
-      \node[above left]at (1,-0.01) {\usebeamercolor{author}\usebeamerfont{author}\insertdate}; 
+      \node[above right]at (0,0) {\usebeamercolor[fg]{date}\usebeamerfont{author}\insertauthor}; 
+      \node[above left]at (1,0) {\usebeamercolor[fg]{author}\usebeamerfont{author}\insertdate}; 
     }
 }
 
