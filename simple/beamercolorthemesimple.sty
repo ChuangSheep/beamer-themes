@@ -1,15 +1,18 @@
 
-\definecolor{blue-light1}{RGB}{213,230,240}
+\definecolor{blue-lighten1}{RGB}{213,230,240}
 \definecolor{blue-darken1}{RGB}{15,48,74}
+\definecolor{blue-darken2}{RGB}{109,162,194}
 
-\definecolor{orange-light1}{RGB}{247,173,35}
+\definecolor{orange-lighten1}{RGB}{247,173,35}
 
 \definecolor{gray}{RGB}{140,140,140}
+\definecolor{gray-lighten1}{RGB}{240,240,240}
 
-\setbeamercolor{primary}{fg=blue-darken1,bg=blue-light1}
-\setbeamercolor{secondary}{fg=orange-light1,bg=blue-light1} 
+\setbeamercolor{primary}{fg=blue-darken1,bg=blue-lighten1}
+\setbeamercolor{secondary}{fg=orange-lighten1,bg=blue-lighten1} 
 \setbeamercolor{text}{fg=black}
 \setbeamercolor{references}{fg=gray}
+
 
 \setbeamercolor*{title page header}{use=primary,fg=primary.fg}
 \setbeamercolor*{title page subheader}{use=primary,fg=primary.fg}
@@ -17,5 +20,11 @@
 \setbeamercolor*{author}{fg=references.fg}
 
 \setbeamercolor*{frametitle}{use=primary,fg=primary.fg}
+
+\setbeamercolor*{itemize item}{use=secondary,fg=secondary.fg}
+\setbeamercolor*{itemize subitem}{use=secondary,fg=secondary.fg}
+
+\setbeamercolor*{block title}{use=secondary,fg=secondary.fg,bg=primary.bg}
+\setbeamercolor*{block body}{use=text,fg=text.fg,bg=primary.bg}
 
 

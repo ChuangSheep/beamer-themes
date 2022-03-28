@@ -1,6 +1,6 @@
 \mode<presentation>
 
-\defbeamertemplate*{frametitle}{texsx}[1][]{
+\defbeamertemplate*{frametitle}{simple}[1][]{
   \setlength{\unitlength}{1mm}
     \tikz[overlay, remember picture,
     shift=(current page.south west),
@@ -14,6 +14,9 @@
       \node[anchor=south,below right] at (0.0509,0.95) {\usebeamercolor{frametitle}\usebeamerfont{frametitle}\insertframetitle}; 
     }
 }
+
+\setbeamertemplate{itemize item}{\usebeamercolor[fg]{itemize item}$\blacksquare$}
+\setbeamertemplate{itemize subitem}{\usebeamercolor[fg]{itemize item}$\blacktriangleright$}
 
 % Env Aliasing: iframe --- indentframe
 % FIX: HOW TF TO PASS PARAMETER?
