@@ -44,4 +44,23 @@
 }
 
 
+% Endpage
+\setbeamertemplate{endpage}{
+  \begin{frame}
+    \tikz[overlay, remember picture,
+    shift=(current page.south west),
+    x=(current page.south east), y=(current page.north west),]
+    {
+      \usebeamercolor{primary}
+      \fill[color=fg] (0,\the\paperheight/2) rectangle (\the\paperwidth,\the\paperheight);
+      \usebeamercolor[bg]{primary}\usebeamerfont{endtitle}
+      \node[above right] at (0.1,0.417) {DANKE}; 
+      \usebeamercolor[fg]{primary}\usebeamerfont{endtitle sub}
+      \node[below right] at (0.11,0.525) {Fürs Zuhören}; 
+    }
+  \end{frame}
+}
+
+
+
 \mode<all>
