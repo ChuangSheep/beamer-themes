@@ -19,6 +19,20 @@
 % Itemize
 \setbeamertemplate{itemize item}{\usebeamercolor[fg]{itemize item}$\blacksquare$}
 \setbeamertemplate{itemize subitem}{\usebeamercolor[fg]{itemize item}$\blacktriangleright$}
+\setlength\labelsep   {\dimexpr\labelsep + 0.35cm\relax}  
+\setlength\leftmargini{\dimexpr\leftmargini + 0.35cm\relax}
+
+% Enumerate
+\defbeamertemplate*{enumerate item}{simple}[1][]{
+  % $\blacksquare$
+  \tikz[scale=0.9,every node/.style={scale=0.9}]
+  {
+    \usebeamercolor{secondary}
+    \node[fill=fg]at (0,0) {
+      \color{white}\insertenumlabel
+    }; 
+  }
+}
 
 % Env Aliasing: iframe --- indentframe
 % FIX: HOW TF TO PASS PARAMETER?
