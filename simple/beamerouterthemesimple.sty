@@ -46,7 +46,7 @@
 
 % Endpage
 \setbeamertemplate{endpage}{
-  \begin{frame}
+  \begin{frame}[plain]
     \tikz[overlay, remember picture,
     shift=(current page.south west),
     x=(current page.south east), y=(current page.north west),]
@@ -61,6 +61,15 @@
   \end{frame}
 }
 
+% Page Number
+\setbeamertemplate{footline}{
+  \hfill
+  \usebeamercolor[fg]{references}\usebeamerfont{references}
+    \ifnum1<\thepage\relax
+      \textbf{\insertframenumber} $\;$
+    \fi
+    \vskip0.25cm
+}
 
 
 \mode<all>
