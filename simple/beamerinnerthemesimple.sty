@@ -19,38 +19,44 @@
 % Itemize
 \setbeamertemplate{itemize item}{\usebeamercolor[fg]{itemize item}$\blacksquare$}
 \setbeamertemplate{itemize subitem}{\usebeamercolor[fg]{itemize item}$\blacktriangleright$}
-\setlength\labelsep   {\dimexpr\labelsep + 0.35cm\relax}  
-\setlength\leftmargini{\dimexpr\leftmargini + 0.35cm\relax}
+\setbeamertemplate{itemize subsubitem}{}
+\setlength\labelsep   {\dimexpr\labelsep + 0.25cm\relax}  
+\setlength\leftmargini{\dimexpr\leftmargini + 0.25cm\relax}
 
 % Enumerate
-\defbeamertemplate*{enumerate item}{simple}[1][]{
-  % $\blacksquare$
-  \tikz[scale=0.9,every node/.style={scale=0.9}]
-  {
-    \usebeamercolor{secondary}
-    \node[fill=fg]at (0,0) {
-      \color{white}\insertenumlabel
-    }; 
+\setbeamertemplate{enumerate item}{
+  \usebeamerfont{enumerate item projected}
+  \usebeamercolor{secondary}
+  \raisebox{-0.2em}{
+    \tikz[scale=0.9,every node/.style={scale=0.9}]
+    {
+      \node[fill=fg,right]at (1,1) {
+        \color{white}\insertenumlabel
+      }; 
+    }
   }
 }
+
 
 % Env Aliasing: iframe --- indentframe
 % FIX: HOW TF TO PASS PARAMETER?
 \newcommand{\indentframecontent}[1]{
-  \begin{frame}{{#1}}
+  \begin{frame}
+    \frametitle{#1}
     \usebeamerfont{normal text}
-    \hfill
+    \hspace*{0.5cm}
     \begin{minipage}[c][\the\paperheight - 6cm][t]{\textwidth-0.5cm}
       \BODY
     \end{minipage}
   \end{frame}
 }
 \NewEnviron{indentedframe}[1][]{
-  \indentframecontent{{#1}}
+  \indentframecontent{#1}
 }
 \NewEnviron{iframe}[1][]{
-  \indentframecontent{{#1}}
+  \indentframecontent{#1}
 }
+
 
 
 
